@@ -1,0 +1,28 @@
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background-size: cover;
+}
+.img-container {
+    margin-left:12rem ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.movie-info{
+    margin-left:3rem ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.list{
+    margin: 5px;
+    font-size: 20px;
+}
+
+ul{
+    list-style: none;
+}
