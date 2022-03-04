@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./MovieList.css";
 import { useRouteMatch } from "react-router-dom";
 import axios from "axios";
-import Trailer from "./Trailer"
+import Trailer from "./Trailer";
 const img = "https://image.tmdb.org/t/p/w500";
 
 const MovieDetail = () => {
@@ -10,13 +10,7 @@ const MovieDetail = () => {
 
   const { url } = useRouteMatch();
   const movieInfo = `https://api.themoviedb.org/3/movie/${url}?api_key=bb74ecdab3222c908dcc3495aeabee76&language=en-US`;
-  // const movieTrailer =`https://api.themoviedb.org/3/movie/${url}/videos?api_key=bb74ecdab3222c908dcc3495aeabee76&language=en-US`
-  
 
-  // const fetchTrailer = async () => {
-  //   const trailer = await axios.get(movieTrailer)
-  //   console.log(trailer.data);
-  // }
   const fetchInfo = async () => {
     const info = await axios.get(movieInfo);
     setMovie(info.data);
@@ -25,14 +19,9 @@ const MovieDetail = () => {
   useEffect(() => {
     fetchInfo();
   });
-  
 
   return (
     <div className="container">
-      {/* <div
-      className="container"
-      style={{ backgroundImage: `url(${img + movie.backdrop_path})` }}
-    > */}
       <div className="img-container">
         <img src={img + movie.poster_path} alt={"title"} />
       </div>
@@ -49,7 +38,7 @@ const MovieDetail = () => {
         <p>{movie.overview}</p>
         <a href={movie.homepage}>Visit WebSite. . .</a>
         <h2>Trailer</h2>
-              <Trailer url={url}/>
+        <Trailer url={url} />
       </div>
     </div>
   );
